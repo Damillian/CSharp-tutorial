@@ -8,29 +8,12 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
-            ArrayList myArrayList = new ArrayList();
-            ArrayList myArrayList2 = new ArrayList(100);
+            Employee karel = new Employee("Ferdinands", "Karel", 15000);
+            Boss hendrik = new Boss("Hazelaar", "Hendrik", 35000, "Lexus");
+            Trainee pietje = new Trainee("van de Mortel", "Pietje", 0, 16, 24);
 
-            myArrayList.Add(25);
-            myArrayList.Add("Hello");
-            myArrayList.Add(12.5515);
-            myArrayList.Add(78);
-            myArrayList.Add("Grargh");
-
-            myArrayList.Remove(25);
-            myArrayList.RemoveAt(1);
-
-            int sum = 0;
-
-            foreach (object obj in myArrayList)
-            {
-                if (obj is int)
-                {
-                    sum += Convert.ToInt32(obj);
-                }
-            }
-
-            Console.WriteLine(sum);
+            hendrik.Lead();
+            pietje.Work();
         }
 
     }
