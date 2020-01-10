@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 
 namespace HelloWorld
 {
+
+
     class Program
     {
 
         static void Main(string[] args)
         {
-            Employee karel = new Employee("Ferdinands", "Karel", 15000);
-            Boss hendrik = new Boss("Hazelaar", "Hendrik", 35000, "Lexus");
-            Trainee pietje = new Trainee("van de Mortel", "Pietje", 0, 16, 24);
+            Shape[] shapes = { new Sphere(4), new Cube(3) };
 
-            hendrik.Lead();
-            pietje.Work();
+            foreach(Shape shape in shapes)
+            {
+                shape.GetInfo();
+                Console.WriteLine("{0} has a volume of {1}", shape.Name, shape.Volume());
+            }
         }
 
     }
