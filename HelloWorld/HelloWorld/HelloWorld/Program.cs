@@ -9,15 +9,15 @@ namespace HelloWorld
     class Program
     {
 
+        public delegate double PerformCalculation(double x, double y);
+
+        public static double Addition(double a, double b)
+        {
+            return a + b;
+        }
         static void Main(string[] args)
         {
-            Shape[] shapes = { new Sphere(4), new Cube(3) };
-
-            foreach(Shape shape in shapes)
-            {
-                shape.GetInfo();
-                Console.WriteLine("{0} has a volume of {1}", shape.Name, shape.Volume());
-            }
+            PerformCalculation getSum = Addition;
         }
 
     }
