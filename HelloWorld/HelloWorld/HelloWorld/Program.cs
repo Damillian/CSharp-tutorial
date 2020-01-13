@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.IO;
 
 namespace HelloWorld
@@ -9,15 +8,16 @@ namespace HelloWorld
     class Program
     {
 
-        public delegate double PerformCalculation(double x, double y);
-
-        public static double Addition(double a, double b)
-        {
-            return a + b;
-        }
         static void Main(string[] args)
         {
-            PerformCalculation getSum = Addition;
+            var file = new File() { Title = "File 1" };
+            var downloadHelper = new DownloadHelper();
+            var unpackService = new UnpackService();
+            var notificationService = new NotificationService();
+            downloadHelper.FileDownloaded += unpackService.OnFileDownloaded;
+            downloadHelper.FileDownloaded += notificationService.OnFileDownloaded;
+
+            downloadHelper.Download(file);
         }
 
     }
