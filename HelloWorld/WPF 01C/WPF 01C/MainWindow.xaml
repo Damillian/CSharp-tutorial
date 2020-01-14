@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:WPF_01C"
         mc:Ignorable="d"
         Title="My first GUI" Height="450" Width="800">
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="339,191,0,0" TextWrapping="Wrap" Text="Hello Raymond" VerticalAlignment="Top" Height="29" Width="132" RenderTransformOrigin="0.53,-0.62" FontSize="18"/>
-        <Button Content="Click me" Height="50" Width="100"></Button>
-        <Button Content="Don't click me" Height="60" Width="120" Margin="482,269,190,90" FontSize="24"></Button>
-    </Grid>
+    <StackPanel>
+        <TextBox Width="100" Margin="50" Text="{Binding ElementName=MySlider, Path=Value, Mode=OneWay}"></TextBox>
+        <Slider Name="MySlider" Minimum="0" IsSnapToTickEnabled="True" TickFrequency="0.25"></Slider>
+    </StackPanel>
 </Window>

@@ -24,5 +24,10 @@ namespace WPF_01C
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Thanks for clicking me");
+        }
     }
 }
