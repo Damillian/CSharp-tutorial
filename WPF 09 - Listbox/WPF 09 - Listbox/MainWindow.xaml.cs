@@ -13,26 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_01C
+namespace WPF_09___Listbox
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Sum SumObj { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
+            List<Match> matches = new List<Match>();
+            matches.Add(new Match() { Team1 = "Bayern Munich", Team2 = "Real Madrid", Score1 = 3, Score2 = 2, Completion = 85 });
 
-            SumObj = new Sum { Num1 = "1", Num2 = "3" };
-            this.DataContext = SumObj;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Thanks for clicking me");
+            lbMatches.ItemsSource = matches; 
         }
     }
 }

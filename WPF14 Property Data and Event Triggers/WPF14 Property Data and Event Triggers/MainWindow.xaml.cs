@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_01C
+namespace WPF14_Property_Data_and_Event_Triggers
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Sum SumObj { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
-
-            SumObj = new Sum { Num1 = "1", Num2 = "3" };
-            this.DataContext = SumObj;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Thanks for clicking me");
         }
     }
 }

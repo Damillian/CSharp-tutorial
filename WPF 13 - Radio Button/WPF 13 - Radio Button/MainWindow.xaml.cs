@@ -13,26 +13,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_01C
+namespace WPF_13___Radio_Button
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Sum SumObj { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
-
-            SumObj = new Sum { Num1 = "1", Num2 = "3" };
-            this.DataContext = SumObj;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Thanks for clicking me");
+            RadioButton checkedRadioButton = (RadioButton)sender;
+            if (checkedRadioButton.Name == "rbYes")
+                MessageBox.Show("Thank you!");
+            else if (checkedRadioButton.Name == "rbNo")
+                MessageBox.Show("Wow, harsh...");
+            else
+                MessageBox.Show("Aww come on, say yes.");
         }
     }
 }
