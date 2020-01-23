@@ -22,18 +22,26 @@ namespace PingPong
 
             player1 = new Player(pbPlayer1, Key.W, Key.S);
             player2 = new Player(pbPlayer2, Key.Up, Key.Down);
+            ball = new Ball(pbBall);
             timer1.Tick += new EventHandler(MoveObjects);
-            timer1.Interval = 20;
+            timer1.Interval = 10;
             timer1.Start();
-            
-
-
         }
 
         private void MoveObjects(object sender, EventArgs e)
         {
             player1.MoveBat();
             player2.MoveBat();
+            ball.MoveBall();
+            ball.CheckForCollision(player1, player2);
+
+            string winner = ball.CheckForWinner();
+            if (winner != null)
+            {
+                Console.WriteLine("the winner is " + winner);
+                ball = new Ball(pbBall);
+            }
+                
         }
     }
 }

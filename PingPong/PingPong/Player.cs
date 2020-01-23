@@ -10,7 +10,7 @@ namespace PingPong
 {
     class Player
     {
-        private PictureBox bat;
+        public PictureBox bat;
 
         private Key upKey;
         private Key downKey;
@@ -24,10 +24,10 @@ namespace PingPong
 
         public void MoveBat()
         {
-            if (Keyboard.IsKeyDown(downKey) && bat.Top < 250)
-                bat.Top += 2;
-            else if (Keyboard.IsKeyDown(upKey) && bat.Top > 50)
-                bat.Top -= 2;
+            if (Keyboard.IsKeyDown(downKey) && bat.Top < 260)
+                bat.Top += 4;
+            else if (Keyboard.IsKeyDown(upKey) && bat.Top > 20)
+                bat.Top -= 4;
         }
     }
 }
