@@ -24,7 +24,7 @@ namespace PingPong
 
         public void MoveBat()
         {
-            if (Keyboard.IsKeyDown(downKey) && bat.Top < 260)
+            if (Keyboard.IsKeyDown(downKey) && bat.Top < 210)
                 bat.Top += 4;
             else if (Keyboard.IsKeyDown(upKey) && bat.Top > 20)
                 bat.Top -= 4;

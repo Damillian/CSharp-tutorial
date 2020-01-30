@@ -39,7 +39,17 @@ namespace PingPong
             if (winner != null)
             {
                 Console.WriteLine("the winner is " + winner);
+
                 ball = new Ball(pbBall);
+
+                if (winner == "p1")
+                {
+                    lblP1Score.Text = (Int32.Parse(lblP1Score.Text) + 1).ToString();
+                } else
+                {
+                    lblP2Score.Text = (Int32.Parse(lblP2Score.Text) + 1).ToString();
+                }
+                
             }
                 
         }
